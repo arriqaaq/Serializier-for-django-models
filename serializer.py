@@ -1,5 +1,4 @@
 from django.db.models.query import QuerySet
-from VendorApp.models import Vendor, OrgVendorBalance
 from decimal import Decimal
 from datetime import datetime
 
@@ -27,10 +26,4 @@ def QuerySetSerializer(queryset, req_fields = [], skip_fields = [], name_map_dic
             data.append(item)    
     return data
 
-def test():
-    vendors = Vendor.objects.all().filter(orgId = 'VATechVentures')
-    #vendorBalances = OrgVendorBalance.objects.all()
-    #VendorSlice = vendors[:10]
-    #print QuerySetSerializer(vendorBalances)
-    print QuerySetSerializer(vendors)
 
